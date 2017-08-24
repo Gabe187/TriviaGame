@@ -12,7 +12,7 @@ window.onload = function() {
 var correct = 0;
 var incorrect = 0;
 var questionCount = 0;
-var unanswered = 0;
+var unanswered = 3;
 
 //  Variable that will hold our setInterval that runs the timer
 var intervalId;
@@ -122,9 +122,11 @@ function renderQuestions () {
 
 			correct++;
 			questionCount++;
+			unanswered--;
 			//unanswered--;
 			console.log(correct);
 			$("#total-correct").html(correct);
+			$("#total-unanswered").html(unanswered);
 
 			//check to see if all questions were asked.  If so, then complete the game; otherwise, render the next question.
 			if (questionCount === threeQuestions.length) {
@@ -132,6 +134,7 @@ function renderQuestions () {
 				timerRunning = false;
 				timer.time = 0;
 				$("#timer-display").html(timer.time);
+				$("#answers").html("");
 			} else {
 				renderQuestions();
 			};
@@ -140,9 +143,11 @@ function renderQuestions () {
 
 			incorrect++;
 			questionCount++;
+			unanswered--;
 			//unanswered = ;
 			console.log(incorrect);
 			$("#total-incorrect").html(incorrect);
+			$("#total-unanswered").html(unanswered);
 
 			//check to see if all questions were asked.  If so, then complete the game; otherwise, render the next question.
 			if (questionCount === threeQuestions.length) {
@@ -150,6 +155,7 @@ function renderQuestions () {
 				timerRunning = false;
 				timer.time = 0;
 				$("#timer-display").html(timer.time);
+				$("#answers").html("");
 			} else {
 				renderQuestions();
 			};
