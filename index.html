@@ -1,0 +1,137 @@
+<!--
+
+PSUEDO CODE
+- Render 10 trivia questions that are True/False
+- Set timer for the user to complete the quiz
+- Show the countdown timer to the user
+- Tally the score when the timer runs out
+- Add "Done" button to submit questions before timer done
+- Allow user to submit only one answer per question
+- Show # correct, # incorrect, # unanswered
+
+JS/JQUERY
+- 
+
+
+-->
+
+<!DOCTYPE html>
+<html lang = "en-us">
+
+<head>
+
+	<!-- Adds the icon in the browser title -->
+	<link rel="icon" type="image/jpg" href="http://www.milart.com/mm5/graphics/00000001/cat-coastguard.png">
+
+	<meta charset="UTF-8">
+
+	<!--Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- BOOTSRAP, Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<title>Trivia Game, Wk 5</title>
+
+	<style type="text/css">
+
+	.button-image {
+		width: 25px;
+	}
+
+	</style>
+
+</head>
+<body>
+
+ 	<!-- Bootstrap Container will hold everything. -->
+ 	<div class='container'>
+
+	    <!-- Jumbotron holds the title section. -->
+	    <div class='jumbotron'>
+	    	<div class='container'>
+	        	<h1>Coast Guard Trivia</h1>
+	        	<p>Press "Start Game" to begin. Click on the Coast Guard seal to select your answer. Semper Paratus!</p>
+	      	</div>
+	    </div>
+
+    <!-- Game elements held here. Panels are being used to hold various sections. -->
+    <div class='row'>
+     	<div class='col-lg-12'>
+
+
+        	<!-- First Panel: Holds the countdown timer. -->
+	        <div class='panel panel-default'>
+	         	<div class='panel-body'>
+		            <!-- This span is where the randomly generated number will go (from 19-120) -->
+		            <strong>Time Remaining: </strong> <span id="timer-display">120</span>
+	         	</div>
+
+	        </div>
+
+        	<!-- Second Panel: Holds the 10 questions. -->
+        	<div class='panel panel-default'>
+
+         		<div class='panel-heading'>
+            		<h3 class='panel-title'><strong>Questions</strong></h3>
+            		<button id="start">START GAME</button>        <button id="submit">SUBMIT ALL ANSWERS</button>
+         		</div>
+
+         		<div class='panel-body'>
+
+         			<!-- This will be the div that I will fill with the questions -->
+         			<div id="questions"></div>
+
+         			<!-- This will be the dive that I will fill with the answer options -->
+         			<div id="answers"></div>
+
+         		</div>
+
+     		</div>
+
+
+	        <!-- Third Panel: Holds the # correct answers. -->
+	        <div class='panel panel-default'>
+
+	         	<div class='panel-body'>
+		            <!-- This span is where I'll be dumping the number of correct answers. -->
+		            <strong>Correct: </strong> <span id="total-correct">0</span>
+	         	</div>
+
+	        </div>
+
+	        <!-- Fourth Panel: Holds the number of incorrect answers. -->
+	        <div class='panel panel-default'>
+
+	         	<div class='panel-body'>
+		            <!-- This span is where I'll be dumping the number of unanswered questions. -->
+		            <strong>Incorrect: </strong> <span id="total-incorrect">0</span>
+	         	</div>
+
+	        </div>
+
+        	<!-- Fifth Panel: Holds the number of incorrect answers. -->
+	        <div class='panel panel-default'>
+
+	         	<div class='panel-body'>
+		            <!-- This span is where I'll be dumping the number of unanswered questions. -->
+		            <strong>Unanswered: </strong> <span id="total-unanswered">0</span>
+	         	</div>
+
+	        </div>
+
+     	</div>
+
+    </div>
+
+  	</div>
+  <!--  Container Closed  -->
+
+<!--  jQuery Link  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Adds a link to the JavaScript file. -->
+<script src="assets/javascript/app.js"></script>
+
+</body>
+</html>
